@@ -373,8 +373,6 @@ static const CGFloat __blurTintColorAlpha = 0.2f;				// defines how much to tint
 		}
 	}
 	
-	[self.loadingView startAnimating];
-	
 	// stores data as it's loaded from the request
 	self.urlData = [[NSMutableData alloc] init];
 	
@@ -385,6 +383,7 @@ static const CGFloat __blurTintColorAlpha = 0.2f;				// defines how much to tint
 	if (self.fromView) {
 		[self.fromView addSubview:self.loadingView];
 		self.loadingView.center = CGPointMake(CGRectGetWidth(self.fromView.frame) / 2.0, CGRectGetHeight(self.fromView.frame) / 2.0);
+    [self.loadingView startAnimating];
 	}
 	
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
